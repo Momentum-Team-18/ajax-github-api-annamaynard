@@ -1,9 +1,0 @@
-NOTES/OBJECTIVES
-
-- make html , css and js files 
-- mock up html , css 
-- retreave personal data from github
-    -using FETCH
--font AwesomeLibrary
-    ```html
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
