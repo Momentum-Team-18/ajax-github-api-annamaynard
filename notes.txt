@@ -1,18 +1,90 @@
-NOTES/OBJECTIVES
-
-// - make html , css and js files 
-// -link css file 
-
-// -font AwesomeLibrary
-//     ```html
-//   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
 
-- retreave personal data from github
-    -set up fetch to call API 
-     - avatar 
-     "avatar_url": "https://avatars.githubusercontent.com/u/130167684?v=4"
-     - user info 
-     "name": "AnnaMaynrd"
-     - repos 
-     "repos_url": "https://api.github.com/users/annamaynard/repos"
+
+- Javascript Styling? Div in a div? class applied to two things or just one ? 
+- flex-box for header 
+- FOR loop for repos 
+
+
+
+        // AVATAR PIC
+let avatarPic = document.createElement("img");
+avatarPic.src = parsedResponse.avatar_url;
+avatarPic.classList.add("image");
+
+        // ANNA MAYNARD 
+let userName = document.createElement('h1');
+userName.innerText = parsedResponse.name;
+userName.classList.add("userName");
+
+mainContainer.appendChild(avatarPic);
+mainContainer.appendChild(userName);
+
+
+
+// FIRST DIV 
+    // LOCATION 
+    // URL --- make short link  -- why is it not taking on userInfo class? 
+    // GITHUB USERNAME 
+
+
+          // LOCATION
+let userLocation = document.createElement('p');
+userLocation.innerText = `Location :  ${parsedResponse.location}`
+mainContainer.appendChild(userLocation);
+userLocation.classList = ("userInfo");
+ 
+console.log(userLocation)
+        
+        // URL
+let gitHubUrl = document.createElement('p');
+gitHubUrl.innerText = `GitHub URL : ${parsedResponse.url}`;
+mainContainer.appendChild(gitHubUrl);
+gitHubUrl.classList = ("userInfo");
+
+console.log(gitHubUrl);
+
+        // USERNAME
+let userLogin = document.createElement('p');
+userLogin.innerText = `GitHub username : ${parsedResponse.login}`;
+mainContainer.appendChild(userLogin);
+userLogin.classList = ("userInfo");
+
+console.log(userLogin)
+
+
+
+// REPOS
+
+let gitRepo = function(parsedResponse) {
+
+    for(let repo in parsedResponse) {
+        let repoDiv= document.createElement ('div');
+        let repoLink= document.createElement('a');
+
+
+
+        let source = parsedResponse[repo]
+        let text = document.createTextNode ("href", source ["full_name"]);
+        repoLink.setAttribute("href", source['git_url']);
+        repoLink.appendChild(text);
+        repoDiv.append(repoLink);
+        mainContainer.append (repoDiv);
+
+    }
+    console.log(mainContainer);
+
+}
+
+
+
+
+
+
+        // REPOS
+// let gitRepos = document.createElement('div');
+// gitRepos.innerText = parsedResponse.repos_url; 
+// mainContainer.appendChild(gitRepos)
+// gitRepos.classList.add=("gitRepos");
+
+})

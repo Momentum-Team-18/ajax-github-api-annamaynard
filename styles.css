@@ -1,23 +1,35 @@
 #mainContainer {
-    border: 2px solid black;
-    font-size: large;
+  border: 2px solid black;
+  font-size: large;
+  background-color: white;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+}
+.headerDiv {
+  background-color: white;
+  border: 2px solid salmon;
+  padding: 10px;
+  font-size: large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.header {
-    background-color: purple;
-    border: 2px solid salmon;
-    padding: 10px;
-    font-size: large;
-    display:flex;
+.avatarDiv {
+  display: flex;
+  background-color: white;
 }
-.userName{
-    font-size: large;
-}
-.image{
-    border: 2px yellow;
+.image {
+  border: 2px yellow;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
 .userInfo {
-    border : 2px solid blue;
-    background-color: pink;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  background-color: pink;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 10px;
+  margin: 0 auto;
 }

@@ -41,17 +41,11 @@ let userName = document.createElement('h1');
 userName.innerText = parsedResponse.name;
 userName.classList.add("userName");
 
-
-
 mainContainer.appendChild(avatarPic);
 mainContainer.appendChild(userName);
 
 
 
-// FIRST DIV 
-    // LOCATION 
-    // URL --- make short link  -- why is it not taking on userInfo class? 
-    // GITHUB USERNAME 
 
 
           // LOCATION
@@ -66,7 +60,7 @@ console.log(userLocation)
 let gitHubUrl = document.createElement('p');
 gitHubUrl.innerText = `GitHub URL : ${parsedResponse.url}`;
 mainContainer.appendChild(gitHubUrl);
-userLocation.classList = ("userInfo");
+gitHubUrl.classList = ("userInfo");
 
 console.log(gitHubUrl);
 
@@ -79,10 +73,38 @@ userLogin.classList = ("userInfo");
 console.log(userLogin)
 
 
+
+// REPOS
+
+let gitRepo = function(parsedResponse) {
+
+    for(let repo in parsedResponse) {
+        let repoDiv= document.createElement ('div');
+        let repoLink= document.createElement('a');
+
+
+
+        let source = parsedResponse[repo]
+        let text = document.createTextNode ("href", source ["full_name"]);
+        repoLink.setAttribute("href", source['git_url']);
+        repoLink.appendChild(text);
+        repoDiv.append(repoLink);
+        mainContainer.append (repoDiv);
+
+    }
+    console.log(mainContainer);
+
+}
+
+
+
+
+
+
         // REPOS
-let gitRepos = document.createElement('div');
-gitRepos.innerText = parsedResponse.repos_url; 
-mainContainer.appendChild(gitRepos)
-gitRepos.classList.add=("gitRepos");
+// let gitRepos = document.createElement('div');
+// gitRepos.innerText = parsedResponse.repos_url; 
+// mainContainer.appendChild(gitRepos)
+// gitRepos.classList.add=("gitRepos");
 
 })
