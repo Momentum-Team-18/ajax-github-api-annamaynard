@@ -1,35 +1,39 @@
+*{font-family: 'Times New Roman', Times, serif;}
+
 #mainContainer {
   border: 2px solid black;
   font-size: large;
   background-color: white;
 }
-h1{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: white;
-}
+
 .headerDiv {
-  background-color: white;
-  border: 2px solid salmon;
+
   padding: 10px;
   font-size: large;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-.avatarDiv {
-  display: flex;
-  background-color: white;
-}
 .image {
-  border: 2px yellow;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
+    border: 2px black;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+  }
+
+.nameDiv {
+   
+    font-size: 40px;
 }
-.userInfo {
+
+
+.userInfoDiv {
   background-color: pink;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 10px;
   margin: 0 auto;
+}
+
+.repoDiv {
+    justify-content: space-between;
 }

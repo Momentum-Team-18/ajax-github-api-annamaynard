@@ -44,13 +44,10 @@ fetch(gitUrl, {
     // ANNA MAYNARD
     let nameDiv = document.createElement("div");
     nameDiv.classList.add("nameDiv");
-    let userName = document.createElement("h1");
-    userName.innerText = parsedResponse.name;
-    userName.classList.add("userName");
-    nameDiv.appendChild(userName);
+    nameDiv.innerText = parsedResponse.name;
+    mainContainer.appendChild(nameDiv);  
     headerDiv.appendChild(nameDiv);
-    //mainContainer.appendChild(userName);
-
+   
     console.log(nameDiv);
 
     // USER INFO DIV
@@ -87,6 +84,7 @@ fetch(gitUrl, {
 
         for(let repo of parsedResponse) {
             let repoLink= document.createElement('a');
+            repoLink.classList.add("repoDiv")
             repoLink.href=repo.url
             repoLink.innerText=repo.url
             mainContainer.append(repoDiv)
@@ -98,7 +96,7 @@ fetch(gitUrl, {
     }
  
     mainContainer.appendChild(headerDiv);
-    mainContainer.appendChild(nameDiv);
+    // mainContainer.appendChild(nameDiv);
     mainContainer.appendChild(userInfoDiv);
     mainContainer.appendChild(repoDiv);
   });
